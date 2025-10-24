@@ -153,7 +153,7 @@ class VKGraphAnalyzer:
         for u, v in self.graph.edges():
             if u in self.user_data and v in self.user_data:
                 features = self._extract_features(u, v)
-                data.append(features + [1])  # 1 = друзья
+                data.append(features + [1])  # 1 - друзья
                 edges_processed += 1
             else:
                 edges_skipped += 1
@@ -186,7 +186,7 @@ class VKGraphAnalyzer:
 
             if u != v and not self.graph.has_edge(u, v):
                 features = self._extract_features(u, v)
-                data.append(features + [0])  # 0 = не друзья
+                data.append(features + [0])  # 0 - не друзья
                 negative_count += 1
 
         df = pd.DataFrame(data, columns=[
