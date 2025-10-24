@@ -211,6 +211,7 @@ class VKGraphAnalyzer:
         same_city = int(u_data['city_id'] == v_data['city_id'] and u_data['city_id'] != 0)  # совпадает ли город пользователей. 1 - да, 0 - нет
         same_university = int(u_data['university'] == v_data['university'] and u_data['university'] != 0)  # совпадает ли вуз пользователей. 1 - да, 0 - нет
 
+        # ------------------------------- Параметры на вход модели -------------------------------
         u_friends = set(self.graph.neighbors(u))  # все друзья пользователя u
         v_friends = set(self.graph.neighbors(v))  # все друзья пользователя v
         common_friends = len(u_friends.intersection(v_friends))  # количество общих друзей у пары
