@@ -9,6 +9,7 @@ import time
 import pickle
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm
+from matplotlib.patches import Patch
 
 
 class VKGraphAnalyzer:
@@ -242,7 +243,7 @@ class VKGraphAnalyzer:
         # print("\nClassification Report:")
         # print(classification_report(y_test, y_pred, target_names=['Не друзья', 'Друзья']))
 
-        feature_importance = pd.DataFrame({  # важность признаков
+        feature_importance = pd.DataFrame({  # Важность признаков
             'feature': X.columns,
             'importance': model.feature_importances_
         }).sort_values('importance', ascending=False)
@@ -339,7 +340,6 @@ class VKGraphAnalyzer:
                 font_color='black'
             )
 
-        from matplotlib.patches import Patch
         legend_elements = [
             Patch(facecolor='#FF0000', label='Мои друзья'),
             Patch(facecolor='#FF69B4', label='Женщины (друзья моих друзей)'),
@@ -417,7 +417,7 @@ class VKGraphAnalyzer:
 
 
 if __name__ == "__main__":
-    TOKEN = ""
+    TOKEN = "5ae599cd5ae599cd5ae599cdcb59d991cb55ae55ae599cd321f1d9152a55c866cdfe76f"
     GROUP_MEMBERS = [192065628, 353731908, 387361899]
 
     analyzer = VKGraphAnalyzer(TOKEN)
