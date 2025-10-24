@@ -138,7 +138,7 @@ class VKGraphAnalyzer:
         print("-" * 50)
         print(f"Узлов в графе: {self.graph.number_of_nodes()}")
         print(f"Рёбер в графе: {self.graph.number_of_edges()}")
-        print(f"Пользователей в user_data: {len(self.user_data)}")
+        # print(f"Пользователей в user_data: {len(self.user_data)}")
 
         # Проверяем, какие узлы есть в графе, но нет в user_data
         missing = set(self.graph.nodes()) - set(self.user_data.keys())  # проверка узло, которые есть в графе, но нет в user_data
