@@ -238,7 +238,7 @@ class VKGraphAnalyzer:
         y_pred = model.predict(X_test)
 
         print("Результаты на тестовой выборке:")
-        print(f"Accuracy: {accuracy_score(y_test, y_pred):.4f}")
+        print(f"Точность: {accuracy_score(y_test, y_pred):.4f}")
         # print("\nClassification Report:")
         # print(classification_report(y_test, y_pred, target_names=['Не друзья', 'Друзья']))
 
@@ -248,7 +248,7 @@ class VKGraphAnalyzer:
             'importance': model.feature_importances_
         }).sort_values('importance', ascending=False)
 
-        print(f"\033[33m           Важность признаков:\033[0m")
+        print(f"\n\033[33m           Важность признаков:\033[0m")
         print(feature_importance)
 
         return model
