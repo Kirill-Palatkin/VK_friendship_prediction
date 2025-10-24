@@ -242,8 +242,7 @@ class VKGraphAnalyzer:
         # print("\nClassification Report:")
         # print(classification_report(y_test, y_pred, target_names=['Не друзья', 'Друзья']))
 
-        # Важность признаков
-        feature_importance = pd.DataFrame({
+        feature_importance = pd.DataFrame({  # важность признаков
             'feature': X.columns,
             'importance': model.feature_importances_
         }).sort_values('importance', ascending=False)
@@ -276,7 +275,7 @@ class VKGraphAnalyzer:
             pickle.dump(self.graph, f)
         with open(f'{filename_prefix}_user_data.pkl', 'wb') as f:
             pickle.dump(self.user_data, f)
-        print(f"\n✓ Данные сохранены: {filename_prefix}_*.pkl")
+        print(f"\nДанные сохранены: {filename_prefix}_*.pkl")
 
     def load_data(self, filename_prefix='vk_graph'):
         with open(f'{filename_prefix}_graph.pkl', 'rb') as f:
