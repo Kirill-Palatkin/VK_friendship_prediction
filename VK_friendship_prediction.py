@@ -240,8 +240,8 @@ class VKGraphAnalyzer:
 
         print("Результаты на тестовой выборке:")
         print(f"Точность: {accuracy_score(y_test, y_pred):.4f}")
-        # print("\nClassification Report:")
-        # print(classification_report(y_test, y_pred, target_names=['Не друзья', 'Друзья']))
+        print("\nОтчёт о классификации:")
+        print(classification_report(y_test, y_pred, target_names=['Не друзья', 'Друзья']))
 
         feature_importance = pd.DataFrame({  # Важность признаков
             'feature': X.columns,
