@@ -206,16 +206,16 @@ class VKGraphAnalyzer:
         u_data = self.user_data[u]
         v_data = self.user_data[v]
 
-        same_sex = int(u_data['sex'] == v_data['sex'] and u_data['sex'] != 0)  # признаки
-        same_city = int(u_data['city_id'] == v_data['city_id'] and u_data['city_id'] != 0)
-        same_university = int(u_data['university'] == v_data['university'] and u_data['university'] != 0)
+        same_sex = int(u_data['sex'] == v_data['sex'] and u_data['sex'] != 0)  # совпадает ли пол пользователей. 1 - да, 0 - нет
+        same_city = int(u_data['city_id'] == v_data['city_id'] and u_data['city_id'] != 0)  # совпадает ли город пользователей. 1 - да, 0 - нет
+        same_university = int(u_data['university'] == v_data['university'] and u_data['university'] != 0)  # совпадает ли вуз пользователей. 1 - да, 0 - нет
 
-        u_friends = set(self.graph.neighbors(u))  # общие друзья
-        v_friends = set(self.graph.neighbors(v))
-        common_friends = len(u_friends.intersection(v_friends))
+        u_friends = set(self.graph.neighbors(u))  # все друзья пользователя u
+        v_friends = set(self.graph.neighbors(v))  # все друзья пользователя v
+        common_friends = len(u_friends.intersection(v_friends))  # количество общих друзей у пары
 
-        degree_u = self.graph.degree(u)  # степени узлов
-        degree_v = self.graph.degree(v)
+        degree_u = self.graph.degree(u)  # степень узла пользователя u (число его друзей в графе)
+        degree_v = self.graph.degree(v)  # степень узла пользователя v (число его друзей в графе)
 
         return [same_sex, same_city, same_university, common_friends, degree_u, degree_v]
 
