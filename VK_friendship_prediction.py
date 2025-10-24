@@ -418,7 +418,7 @@ class VKGraphAnalyzer:
 
 
 if __name__ == "__main__":
-    TOKEN = "5ae599cd5ae599cd5ae599cdcb59d991cb55ae55ae599cd321f1d9152a55c866cdfe76f"
+    TOKEN = ""
     GROUP_MEMBERS = [192065628, 353731908, 387361899]
 
     analyzer = VKGraphAnalyzer(TOKEN)
