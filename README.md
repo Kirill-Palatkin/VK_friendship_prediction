@@ -1,3 +1,5 @@
+# VK_friendship_prediction
+---
 ### `VK_friendship_prediction.py` - основной скрипт 
 ### `get_friends_list.py` - получение друзей из VK
 ### `my_vk_graph_graph.pkl` - данные по графу
