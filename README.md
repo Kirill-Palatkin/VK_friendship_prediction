@@ -5,6 +5,7 @@
 ### `my_vk_graph_graph.pkl` - данные по графу
 ### `my_vk_graph_user_data.pkl` - данные по пользователям
 ### `friendship_model.pkl` - обученная модель Random Forest
+### `requirements.txt` - файл с зависимостями
 ### `/graphs` - директория с визуализацией графов
 ---
 ### Палаткин Кирилл Алексеевич, 103 группа
